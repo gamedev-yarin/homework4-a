@@ -43,10 +43,6 @@ public class HeartSystem : MonoBehaviour {
         if (NumberOfHeart == 0) Destroy(this.gameObject);
     }
 
-
-    public int GetNumberOfHeart() {
-        return NumberOfHeart;
-    }
     private void Heal(Collider2D other)
     {//  A function responsible for healing the player
         if (NumberOfHeart < MaxNumberOfHeart)
