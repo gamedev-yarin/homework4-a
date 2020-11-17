@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * This component spawns the given object at random time-intervals.
+ * This component manages the hit points system.
  */
 
 public class HeartSystem : MonoBehaviour {
@@ -35,7 +35,8 @@ public class HeartSystem : MonoBehaviour {
         if (other.tag == HealingTriggeringTag) Heal(other);
     }
 
-    private void Damage(Collider2D other) {
+    private void Damage(Collider2D other)
+    { //  A function responsible for damaging the player
         Destroy(Hearts[NumberOfHeart - 1]);
         NumberOfHeart--;
         Destroy(other.gameObject);
@@ -47,7 +48,7 @@ public class HeartSystem : MonoBehaviour {
         return NumberOfHeart;
     }
     private void Heal(Collider2D other)
-    {
+    {//  A function responsible for healing the player
         if (NumberOfHeart < MaxNumberOfHeart)
         {
             Destroy(other.gameObject);
